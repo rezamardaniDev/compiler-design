@@ -1,0 +1,68 @@
+LEXER Class Documentation
+
+Class Description:
+    The LEXER class is designed to serve as a lexer for a custom programming language.
+    It utilizes the ply.lex library for lexical analysis.
+
+Class Attributes:
+    - lexer: An instance of the lexer created using ply.lex.
+    
+Class Methods:
+
+1. __init__(self):
+    - Description: Class constructor that initializes the lexer using ply.lex.
+
+2. read_input_file(self, file_name: str) -> str:
+    - Description: Reads the content of a file and returns it as a string.
+    - Parameters:
+        - file_name (str): The name of the file to be read.
+    - Returns:
+        - str: The content of the file.
+
+3. test(self):
+    - Description: Executes the lexer on the input read from 'input.txt' and writes the tokenized output to 'output.txt'.
+                  Also prints the tokens to the console.
+
+4. append_multiple_lines(self, file_name: str, lines_to_append: List[str]):
+    - Description: Appends multiple lines to a file.
+    - Parameters:
+        - file_name (str): The name of the file to which lines will be appended.
+        - lines_to_append (List[str]): A list of strings representing lines to be appended.
+
+5. t_ID(self, t) -> Token:
+    - Description: Tokenizes identifiers (IDs) and reserved words.
+    - Parameters:
+        - t: The token object.
+    - Returns:
+        - Token: The token with the appropriate type.
+
+6. t_NUMBER(self, t) -> Token:
+    - Description: Tokenizes numbers.
+    - Parameters:
+        - t: The token object.
+    - Returns:
+        - Token: The token with the type 'NUMBER' and the numeric value.
+
+7. t_STRING(self, t) -> Token:
+    - Description: Tokenizes strings enclosed in double quotes.
+    - Parameters:
+        - t: The token object.
+    - Returns:
+        - Token: The token with the type 'STRING' and the string value.
+
+8. t_newline(self, t):
+    - Description: Tracks line numbers in the input.
+    - Parameters:
+        - t: The token object.
+
+9. t_ignore(self, t):
+    - Description: Ignores whitespace characters.
+    - Parameters:
+        - t: The token object.
+
+10. t_error(self, t):
+    - Description: Handles lexer errors.
+    - Parameters:
+        - t: The token object.
+
+Note: The class also includes methods for handling various operators and reserved keywords.
