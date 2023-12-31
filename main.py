@@ -153,7 +153,7 @@ class LEXER:
             data = file.read().rstrip()
         return data
 
-    def test(self):
+    def compile(self):
        
         with open("output.txt", 'r+') as f:
             f.truncate(0)
@@ -176,4 +176,4 @@ class LEXER:
         self.append_multiple_lines("output.txt", TOKENS)
 
 lexer = LEXER()
-lexer.test()
+lexer.compile()
